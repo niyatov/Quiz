@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using quiz.Data;
+using quiz.Repositories;
+using quiz.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
+builder.Services.AddTransient<IQuizService, QuizService>();
 
 var app = builder.Build();
 
