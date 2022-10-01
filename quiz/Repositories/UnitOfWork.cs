@@ -6,10 +6,14 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly ApplicationDbContext _context;
     public QuizRepository Quizzes {get;}
+    public TopicRepository Topics { get;}
+    public QuestionRepository Questions { get;}
     public UnitOfWork(ApplicationDbContext context)
     {
         _context = context;
         Quizzes = new QuizRepository(context);
+        Topics = new TopicRepository(context);
+        Questions = new QuestionRepository(context);
     }
 
     public void Dispose()

@@ -6,6 +6,8 @@ namespace quiz.Data;
 public class ApplicationDbContext : DbContext
 {
     public DbSet<Quiz>? Quizzes { get; set; }
+    public DbSet<Topic>? Topics { get; set; }
+    public DbSet<Question>? Questions { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) 
         :base(option) { }
 

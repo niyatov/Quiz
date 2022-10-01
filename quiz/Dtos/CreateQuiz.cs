@@ -15,6 +15,4 @@ public class CreateQuiz
     public DateTimeOffset StartTime { get; set; }
     public DateTimeOffset EndTime { get; set; }
     public string? Password { get; set; }
-
-   
 }

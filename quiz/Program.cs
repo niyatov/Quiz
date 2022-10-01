@@ -16,6 +16,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
 builder.Services.AddTransient<IQuizService, QuizService>();
+builder.Services.AddTransient<ITopicService,TopicService>();
+builder.Services.AddTransient<IQuestionService, QuestionService>();
 
 var app = builder.Build();
 
