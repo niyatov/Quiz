@@ -8,6 +8,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Quiz>? Quizzes { get; set; }
     public DbSet<Topic>? Topics { get; set; }
     public DbSet<Question>? Questions { get; set; }
+    public DbSet<McqOption>? McqOptions { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) 
         :base(option) { }
 

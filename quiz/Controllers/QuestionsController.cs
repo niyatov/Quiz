@@ -10,14 +10,17 @@ namespace quiz.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public  class QuestionsController : ControllerBase
+public partial class QuestionsController : ControllerBase
 {
     private readonly IQuestionService _questionService;
+    private readonly IMcqOptionService _mcqOptionService;
 
     public QuestionsController(
-        IQuestionService questionService)
+        IQuestionService questionService,
+        IMcqOptionService mcqOptionService)
     {
         _questionService = questionService;
+        _mcqOptionService = mcqOptionService;
     }
 
     [HttpGet]
